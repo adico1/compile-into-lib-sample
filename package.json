@@ -1,4 +1,18 @@
 {
   "name": "lib-bundler",
-  "packageManager": "yarn@4.1.1"
+  "main": "dist/index.js",
+  "scripts": {
+    "build:lib2": "yarn workspace @lib-bundler/lib2 build",
+    "build:lib1": "yarn workspace @lib-bundler/lib1 build",
+    "build": "yarn build:lib2 && yarn build:lib1"
+  },
+  "packageManager": "yarn@4.1.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.2"
+  }
 }
